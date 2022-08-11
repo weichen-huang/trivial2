@@ -215,9 +215,7 @@
       <li>
         Check out more math materials in collections like <a
         href="https://artofproblemsolving.com/community/c2008407h2550333_handouts_list"
-        >this one</a> on AoPS, and join the
-        <a href="https://discord.gg/VExpSZfkAE">Discord server</a> to
-        ask for help, discuss problems, and more!
+        >this one</a>
       </li>
     <ul>
   </div>`;
@@ -1267,14 +1265,20 @@
     problem.match(/^\d{4}/) &&
     problem.match(/\d+$/);
 
+
   const computeTest = (problem) =>
     problem
       .match(/(\d{4} )(.*)( Problems)/)[2]
       .replace(/AMC ((?:10)|(?:12))[AB]/, "AMC $1")
       .replace(/AIME I+/, "AIME")
       .replace(/AJHSME/, "AMC 8");
+
+
   const computeYear = (problem) => problem.match(/^\d{4}/)[0];
-  const computeNumber = (problem) => problem.match(/\d+$/)[0];
+  const computeNumber = (problem) =>
+    problem.match(/\d+$/)[0]
+  ;
+
 
   function computeDifficulty(test, num, year) {
     let diff;

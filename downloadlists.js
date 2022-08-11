@@ -35,6 +35,8 @@ import fs from "fs";
   let response = await fetch(`${apiEndpoint}?${params}&origin=*`);
   let json = await response.json();
 
+  console.log(json);
+
   for (let page of json.query.allpages) {
     if (page.title.charAt(0) !== "/") allPages.push(page.title);
     if (validProblem(page.title)) allProblems.push(page.title);
